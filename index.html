@@ -139,7 +139,6 @@
         }
 
         function cleanText(t) {
-            // Removes commas and asterisks, keeps text and periods
             return t.replace(/[,*]/g, '');
         }
 
@@ -168,7 +167,6 @@
                         try {
                             const raw = JSON.parse(data).choices[0].delta.content || "";
                             fullText += raw;
-                            // Update UI with cleaned text
                             element.innerText = cleanText(fullText);
                             const win = document.getElementById('chat-window');
                             if (win.scrollHeight - win.scrollTop - win.clientHeight < 200) win.scrollTop = win.scrollHeight;
